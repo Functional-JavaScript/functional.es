@@ -134,7 +134,7 @@
     return function recur(res) {
       for (const val of iter)
         if ((res = f(val)) !== undefined)
-          return then(res => res === undefined ? recur() : res, res);
+          return then(identity, res);
     } ();
   });
 
